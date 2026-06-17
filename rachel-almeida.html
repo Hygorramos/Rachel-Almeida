@@ -1,0 +1,892 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Rachel Almeida — Professora de Inglês · Tradutora & Intérprete</title>
+<meta name="description" content="+10 anos levando alunos à fluência. Faça o teste gratuito e descubra seu nível de inglês em 2 minutos." />
+
+<!-- ============================================================
+     CONFIG — PREENCHA COM OS DADOS DA RACHEL
+     ============================================================ -->
+<script>
+  const CONFIG = {
+    professora: "Rachel Almeida",
+    // WhatsApp com DDI + DDD + número, só dígitos. Ex: 5598988887777
+    whatsapp: "5598000000000",
+    instagram: "https://instagram.com/atradutora",
+    threads: "https://www.threads.net/@atradutora",
+    // Opcional: cole aqui um endpoint de formulário (Formspree, Google Apps Script, etc).
+    // Se ficar vazio, o envio abre o WhatsApp já preenchido.
+    formEndpoint: ""
+  };
+</script>
+
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..600;1,9..144,300..500&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+
+<style>
+  :root{
+    --paper:#F6F2EA;
+    --paper-2:#EFE9DD;
+    --paper-3:#E7DFCF;
+    --ink:#241F1A;
+    --ink-soft:#5A5147;
+    --muted:#8C8275;
+    --emerald:#123F35;
+    --emerald-deep:#0D2F28;
+    --emerald-soft:#1C5B4D;
+    --brass:#A9802F;
+    --brass-l:#C9A24B;
+    --line:rgba(36,31,26,.14);
+    --line-soft:rgba(36,31,26,.08);
+    --on-dark:#F1ECE0;
+    --on-dark-soft:rgba(241,236,224,.66);
+    --radius:18px;
+    --shadow:0 24px 60px -28px rgba(18,63,53,.45);
+    --maxw:1160px;
+  }
+
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{
+    font-family:"Inter",system-ui,sans-serif;
+    background:var(--paper);
+    color:var(--ink);
+    line-height:1.6;
+    -webkit-font-smoothing:antialiased;
+    overflow-x:hidden;
+  }
+  ::selection{background:var(--brass-l);color:#1a1410}
+  a{color:inherit;text-decoration:none}
+  img{max-width:100%;display:block}
+
+  .wrap{max-width:var(--maxw);margin:0 auto;padding:0 24px}
+  .serif{font-family:"Fraunces",Georgia,serif}
+  .it{font-family:"Fraunces",Georgia,serif;font-style:italic;font-weight:380}
+
+  /* labels / eyebrows */
+  .eyebrow{
+    font-size:12px;letter-spacing:.28em;text-transform:uppercase;
+    font-weight:600;color:var(--brass);display:inline-flex;align-items:center;gap:10px;
+  }
+  .eyebrow::before{content:"";width:26px;height:1px;background:var(--brass);opacity:.7}
+  .eyebrow.center{justify-content:center}
+
+  /* ---------- buttons ---------- */
+  .btn{
+    display:inline-flex;align-items:center;justify-content:center;gap:10px;
+    font-weight:600;font-size:15px;letter-spacing:.01em;
+    padding:15px 26px;border-radius:100px;border:1px solid transparent;cursor:pointer;
+    transition:transform .25s ease,box-shadow .25s ease,background .25s ease,color .25s ease;
+    white-space:nowrap;
+  }
+  .btn:focus-visible{outline:2px solid var(--brass);outline-offset:3px}
+  .btn-primary{background:var(--emerald);color:var(--on-dark);box-shadow:0 14px 30px -14px rgba(18,63,53,.7)}
+  .btn-primary:hover{transform:translateY(-2px);box-shadow:0 22px 40px -16px rgba(18,63,53,.75)}
+  .btn-gold{background:var(--brass);color:#fff}
+  .btn-gold:hover{transform:translateY(-2px);background:#b88a32}
+  .btn-ghost{background:transparent;color:var(--ink);border-color:var(--line)}
+  .btn-ghost:hover{border-color:var(--ink);transform:translateY(-2px)}
+  .btn-light{background:var(--on-dark);color:var(--emerald-deep)}
+  .btn-light:hover{transform:translateY(-2px)}
+  .btn svg{width:18px;height:18px}
+
+  /* ---------- nav ---------- */
+  header.nav{
+    position:fixed;top:0;left:0;right:0;z-index:50;
+    transition:background .3s ease,box-shadow .3s ease,padding .3s ease;
+    padding:20px 0;
+  }
+  header.nav.solid{background:rgba(246,242,234,.86);backdrop-filter:blur(14px);box-shadow:0 1px 0 var(--line-soft);padding:13px 0}
+  .nav-inner{display:flex;align-items:center;justify-content:space-between;gap:24px}
+  .brand{display:flex;align-items:center;gap:12px;font-weight:600}
+  .monogram{
+    width:42px;height:42px;border-radius:50%;display:grid;place-items:center;
+    background:var(--emerald);color:var(--on-dark);font-family:"Fraunces",serif;font-weight:500;font-size:18px;
+    letter-spacing:.02em;flex:none;
+  }
+  .brand b{font-family:"Fraunces",serif;font-weight:500;font-size:18px;letter-spacing:.01em}
+  .brand small{display:block;font-family:"Inter",sans-serif;font-size:10.5px;letter-spacing:.22em;text-transform:uppercase;color:var(--muted);font-weight:600;margin-top:1px}
+  .nav-links{display:flex;align-items:center;gap:30px}
+  .nav-links a{font-size:14.5px;font-weight:500;color:var(--ink-soft);transition:color .2s}
+  .nav-links a:hover{color:var(--emerald)}
+  .nav-cta{display:flex;align-items:center;gap:14px}
+  .menu-btn{display:none;background:none;border:none;cursor:pointer;width:42px;height:42px;border-radius:50%;border:1px solid var(--line)}
+  .menu-btn span{display:block;width:18px;height:1.6px;background:var(--ink);margin:4px auto;transition:.3s}
+
+  /* ---------- hero ---------- */
+  .hero{position:relative;padding:150px 0 90px}
+  .hero::before{
+    content:"";position:absolute;inset:0;z-index:-1;
+    background:
+      radial-gradient(60% 50% at 82% 18%, rgba(28,91,77,.10), transparent 70%),
+      radial-gradient(50% 40% at 8% 92%, rgba(169,128,47,.10), transparent 70%);
+  }
+  .hero-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:60px;align-items:center}
+  .hero h1{
+    font-family:"Fraunces",serif;font-weight:400;
+    font-size:clamp(40px,5.6vw,68px);line-height:1.02;letter-spacing:-.015em;margin:22px 0 0;
+  }
+  .hero h1 .it{font-weight:340;color:var(--emerald)}
+  .hero .echo{
+    display:block;font-size:clamp(17px,2.1vw,22px);color:var(--ink-soft);margin-top:18px;
+    font-family:"Fraunces",serif;font-style:italic;font-weight:360;
+  }
+  .hero p.lead{font-size:17px;color:var(--ink-soft);max-width:30em;margin:24px 0 0}
+  .hero-actions{display:flex;flex-wrap:wrap;gap:14px;margin-top:34px}
+  .hero-sig{margin-top:34px;display:flex;align-items:center;gap:12px;color:var(--muted);font-size:13.5px}
+  .hero-sig .it{font-size:18px;color:var(--emerald)}
+  .hero-sig::before{content:"";width:34px;height:1px;background:var(--line)}
+
+  /* portrait */
+  .portrait-stack{position:relative}
+  .portrait{
+    position:relative;aspect-ratio:4/5;border-radius:230px 230px 24px 24px;overflow:hidden;
+    background:linear-gradient(160deg,var(--emerald),var(--emerald-deep));
+    box-shadow:var(--shadow);border:1px solid rgba(255,255,255,.06);
+  }
+  /* placeholder da foto — troque por <img> da Rachel */
+  .portrait .ph{
+    position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;
+    gap:14px;color:var(--on-dark-soft);text-align:center;padding:30px;
+  }
+  .portrait .ph .mono{
+    width:84px;height:84px;border-radius:50%;border:1px solid rgba(241,236,224,.3);
+    display:grid;place-items:center;font-family:"Fraunces",serif;font-size:30px;color:var(--on-dark);
+  }
+  .portrait .ph small{font-size:11px;letter-spacing:.18em;text-transform:uppercase}
+  .portrait img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+
+  .chip{
+    position:absolute;background:var(--paper);border:1px solid var(--line);border-radius:14px;
+    padding:13px 17px;box-shadow:0 16px 40px -22px rgba(18,63,53,.5);
+  }
+  .chip b{font-family:"Fraunces",serif;font-size:24px;display:block;line-height:1;color:var(--emerald)}
+  .chip span{font-size:11.5px;color:var(--muted);letter-spacing:.04em}
+  .chip.a{top:24px;left:-26px}
+  .chip.b{bottom:36px;right:-22px}
+  @media(max-width:520px){.chip.a{left:-6px}.chip.b{right:-6px}}
+
+  /* ---------- trust strip ---------- */
+  .trust{border-top:1px solid var(--line);border-bottom:1px solid var(--line);background:var(--paper-2)}
+  .trust .wrap{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:24px 40px;padding-top:24px;padding-bottom:24px}
+  .trust .item{display:flex;align-items:baseline;gap:10px}
+  .trust .item b{font-family:"Fraunces",serif;font-size:22px;color:var(--emerald)}
+  .trust .item span{font-size:13.5px;color:var(--ink-soft)}
+  .trust .flags{font-size:20px;letter-spacing:2px}
+
+  /* ---------- generic section ---------- */
+  section.band{padding:96px 0}
+  .sec-head{max-width:640px;margin-bottom:54px}
+  .sec-head.center{margin-left:auto;margin-right:auto;text-align:center}
+  .sec-head h2{font-family:"Fraunces",serif;font-weight:400;font-size:clamp(30px,4vw,46px);line-height:1.06;letter-spacing:-.01em;margin:18px 0 0}
+  .sec-head h2 .it{color:var(--emerald)}
+  .sec-head p{color:var(--ink-soft);font-size:16.5px;margin-top:16px}
+
+  /* método cards */
+  .pillars{display:grid;grid-template-columns:repeat(4,1fr);gap:22px}
+  .pillar{
+    background:var(--paper-2);border:1px solid var(--line-soft);border-radius:var(--radius);padding:30px 26px;
+    transition:transform .3s ease,box-shadow .3s ease,background .3s ease;
+  }
+  .pillar:hover{transform:translateY(-5px);box-shadow:var(--shadow);background:var(--paper)}
+  .pillar .num{font-family:"Fraunces",serif;font-style:italic;color:var(--brass);font-size:15px;letter-spacing:.04em}
+  .pillar h3{font-family:"Fraunces",serif;font-weight:500;font-size:21px;margin:14px 0 8px}
+  .pillar p{font-size:14.5px;color:var(--ink-soft)}
+
+  /* ---------- TEST band (dark) ---------- */
+  .test-band{background:var(--emerald-deep);color:var(--on-dark);position:relative;overflow:hidden}
+  .test-band::before{
+    content:"";position:absolute;inset:0;
+    background:
+      radial-gradient(50% 40% at 85% 10%, rgba(201,162,75,.14), transparent 70%),
+      radial-gradient(45% 45% at 5% 100%, rgba(28,91,77,.5), transparent 70%);
+    pointer-events:none;
+  }
+  .test-band .eyebrow{color:var(--brass-l)}
+  .test-band .eyebrow::before{background:var(--brass-l)}
+  .test-head{text-align:center;max-width:660px;margin:0 auto 44px;position:relative}
+  .test-head h2{font-family:"Fraunces",serif;font-weight:400;font-size:clamp(30px,4.2vw,48px);line-height:1.05;margin:18px 0 0}
+  .test-head h2 .it{color:var(--brass-l)}
+  .test-head p{color:var(--on-dark-soft);font-size:16.5px;margin-top:16px}
+
+  .quiz{
+    position:relative;max-width:720px;margin:0 auto;
+    background:rgba(241,236,224,.04);border:1px solid rgba(241,236,224,.14);
+    border-radius:24px;padding:38px;backdrop-filter:blur(6px);
+  }
+  @media(max-width:560px){.quiz{padding:26px 20px}}
+
+  /* quiz screens */
+  .q-screen{display:none;animation:fade .45s ease both}
+  .q-screen.active{display:block}
+  @keyframes fade{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:none}}
+
+  .quiz-intro{text-align:center}
+  .quiz-intro .big{font-family:"Fraunces",serif;font-size:clamp(26px,4vw,38px);font-weight:400;line-height:1.1}
+  .quiz-intro .big .it{color:var(--brass-l)}
+  .quiz-intro p{color:var(--on-dark-soft);margin:16px auto 28px;max-width:42ch}
+  .quiz-meta{display:flex;justify-content:center;gap:28px;margin-bottom:30px;flex-wrap:wrap}
+  .quiz-meta div{display:flex;align-items:center;gap:9px;font-size:13.5px;color:var(--on-dark-soft)}
+  .quiz-meta b{color:var(--on-dark);font-weight:600}
+  .dot{width:7px;height:7px;border-radius:50%;background:var(--brass-l)}
+
+  /* progress */
+  .q-top{display:flex;align-items:center;justify-content:space-between;margin-bottom:20px}
+  .q-counter{font-size:13px;letter-spacing:.14em;text-transform:uppercase;color:var(--on-dark-soft);font-weight:600}
+  .q-level{font-family:"Fraunces",serif;font-style:italic;font-size:14px;color:var(--brass-l)}
+  .progress{height:5px;border-radius:6px;background:rgba(241,236,224,.14);overflow:hidden;margin-bottom:30px}
+  .progress .bar{height:100%;width:0;background:linear-gradient(90deg,var(--brass),var(--brass-l));border-radius:6px;transition:width .5s cubic-bezier(.4,0,.1,1)}
+
+  .q-text{font-family:"Fraunces",serif;font-weight:400;font-size:clamp(21px,3vw,27px);line-height:1.25;margin-bottom:24px}
+  .q-text .blank{color:var(--brass-l)}
+  .options{display:grid;gap:12px}
+  .opt{
+    display:flex;align-items:center;gap:14px;width:100%;text-align:left;cursor:pointer;
+    background:rgba(241,236,224,.05);border:1px solid rgba(241,236,224,.16);color:var(--on-dark);
+    border-radius:13px;padding:16px 18px;font-size:16px;font-family:inherit;
+    transition:border-color .2s,background .2s,transform .12s;
+  }
+  .opt:hover{border-color:var(--brass-l);background:rgba(241,236,224,.09)}
+  .opt:focus-visible{outline:2px solid var(--brass-l);outline-offset:2px}
+  .opt .key{
+    width:28px;height:28px;border-radius:8px;flex:none;display:grid;place-items:center;
+    font-size:13px;font-weight:600;border:1px solid rgba(241,236,224,.28);color:var(--on-dark-soft);
+    font-family:"Inter",sans-serif;transition:.2s;
+  }
+  .opt.selected{border-color:var(--brass-l);background:rgba(201,162,75,.16)}
+  .opt.selected .key{background:var(--brass-l);color:#23180a;border-color:var(--brass-l)}
+  .q-nav{display:flex;justify-content:space-between;align-items:center;margin-top:26px;gap:14px}
+  .q-back{background:none;border:none;color:var(--on-dark-soft);font:inherit;font-size:14px;cursor:pointer;display:inline-flex;align-items:center;gap:6px}
+  .q-back:hover{color:var(--on-dark)}
+  .q-back[disabled]{opacity:.3;cursor:default}
+
+  /* gate (form to reveal result) */
+  .gate{text-align:center}
+  .gate .lock{width:54px;height:54px;border-radius:50%;display:grid;place-items:center;margin:0 auto 18px;border:1px solid rgba(201,162,75,.5);color:var(--brass-l)}
+  .gate h3{font-family:"Fraunces",serif;font-weight:400;font-size:clamp(24px,3.4vw,32px);line-height:1.12}
+  .gate h3 .it{color:var(--brass-l)}
+  .gate p{color:var(--on-dark-soft);max-width:40ch;margin:14px auto 26px}
+  .gate-form{display:grid;gap:12px;max-width:420px;margin:0 auto;text-align:left}
+  .gate-form input{
+    width:100%;padding:15px 16px;border-radius:12px;font:inherit;font-size:15px;
+    background:rgba(241,236,224,.06);border:1px solid rgba(241,236,224,.2);color:var(--on-dark);
+  }
+  .gate-form input::placeholder{color:rgba(241,236,224,.45)}
+  .gate-form input:focus{outline:none;border-color:var(--brass-l);background:rgba(241,236,224,.1)}
+  .gate-note{font-size:12px;color:var(--on-dark-soft);margin-top:14px}
+
+  /* result */
+  .result{text-align:center}
+  .result .level-badge{
+    display:inline-flex;flex-direction:column;align-items:center;justify-content:center;
+    width:150px;height:150px;border-radius:50%;margin:0 auto 8px;
+    background:radial-gradient(circle at 50% 35%,var(--emerald-soft),var(--emerald-deep));
+    border:1px solid rgba(201,162,75,.45);box-shadow:0 0 0 8px rgba(201,162,75,.08);
+    animation:pop .6s cubic-bezier(.34,1.56,.64,1) both;
+  }
+  @keyframes pop{from{opacity:0;transform:scale(.6)}to{opacity:1;transform:scale(1)}}
+  .result .level-badge b{font-family:"Fraunces",serif;font-size:48px;line-height:1;color:var(--brass-l)}
+  .result .level-badge span{font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:var(--on-dark-soft);margin-top:6px}
+  .result .level-name{font-family:"Fraunces",serif;font-style:italic;font-size:24px;margin:16px 0 4px;color:var(--on-dark)}
+  .result .score{font-size:14px;color:var(--on-dark-soft);letter-spacing:.04em}
+  .result .desc{color:var(--on-dark-soft);max-width:46ch;margin:18px auto 28px;font-size:16px}
+  .result .r-actions{display:flex;gap:14px;justify-content:center;flex-wrap:wrap}
+
+  /* ---------- sobre ---------- */
+  .about-grid{display:grid;grid-template-columns:.85fr 1.15fr;gap:56px;align-items:center}
+  .about-photo{aspect-ratio:1/1.15;border-radius:24px;overflow:hidden;background:linear-gradient(160deg,var(--paper-3),var(--paper-2));border:1px solid var(--line);position:relative}
+  .about-photo .ph{position:absolute;inset:0;display:flex;flex-direction:column;gap:12px;align-items:center;justify-content:center;color:var(--muted);text-align:center;padding:24px}
+  .about-photo .ph .mono{width:74px;height:74px;border-radius:50%;border:1px solid var(--line);display:grid;place-items:center;font-family:"Fraunces",serif;font-size:26px;color:var(--emerald)}
+  .about-photo .ph small{font-size:11px;letter-spacing:.16em;text-transform:uppercase}
+  .about-photo img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+  .about-body h2{font-family:"Fraunces",serif;font-weight:400;font-size:clamp(28px,3.8vw,42px);line-height:1.08;margin:16px 0 0}
+  .about-body h2 .it{color:var(--emerald)}
+  .about-body p{color:var(--ink-soft);margin-top:18px;font-size:16px}
+  .about-tags{display:flex;flex-wrap:wrap;gap:10px;margin-top:26px}
+  .tag{font-size:13px;padding:8px 15px;border-radius:100px;background:var(--paper-2);border:1px solid var(--line);color:var(--ink-soft);font-weight:500}
+  .about-quote{margin-top:28px;padding-left:20px;border-left:2px solid var(--brass);font-family:"Fraunces",serif;font-style:italic;font-size:19px;color:var(--emerald)}
+
+  /* ---------- depoimentos ---------- */
+  .testi-band{background:var(--paper-2);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+  .testi-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+  .testi{background:var(--paper);border:1px solid var(--line-soft);border-radius:var(--radius);padding:28px 26px;display:flex;flex-direction:column;gap:16px}
+  .testi .stars{color:var(--brass);letter-spacing:3px;font-size:14px}
+  .testi p{font-size:15.5px;color:var(--ink);font-family:"Fraunces",serif;font-style:italic;line-height:1.55}
+  .testi .who{display:flex;align-items:center;gap:12px;margin-top:auto}
+  .testi .av{width:42px;height:42px;border-radius:50%;background:var(--emerald);color:var(--on-dark);display:grid;place-items:center;font-family:"Fraunces",serif;font-size:15px;flex:none}
+  .testi .who b{font-size:14.5px;display:block}
+  .testi .who span{font-size:12.5px;color:var(--muted)}
+
+  /* ---------- lead form ---------- */
+  .lead-grid{display:grid;grid-template-columns:1fr 1.05fr;gap:60px;align-items:center}
+  .lead-copy h2{font-family:"Fraunces",serif;font-weight:400;font-size:clamp(30px,4.2vw,48px);line-height:1.05;margin:18px 0 0}
+  .lead-copy h2 .it{color:var(--emerald)}
+  .lead-copy p{color:var(--ink-soft);font-size:16.5px;margin-top:18px;max-width:34ch}
+  .lead-bullets{margin-top:26px;display:grid;gap:14px}
+  .lead-bullets li{list-style:none;display:flex;gap:12px;align-items:flex-start;font-size:15px;color:var(--ink)}
+  .lead-bullets .ck{width:24px;height:24px;border-radius:50%;background:var(--emerald);color:var(--on-dark);display:grid;place-items:center;flex:none;font-size:13px}
+
+  .form-card{background:var(--paper-2);border:1px solid var(--line);border-radius:24px;padding:34px;box-shadow:var(--shadow)}
+  @media(max-width:560px){.form-card{padding:26px 22px}}
+  .field{margin-bottom:16px}
+  .field label{display:block;font-size:13px;font-weight:600;letter-spacing:.02em;margin-bottom:7px;color:var(--ink)}
+  .field input,.field select{
+    width:100%;padding:14px 15px;border-radius:12px;font:inherit;font-size:15px;
+    background:var(--paper);border:1px solid var(--line);color:var(--ink);transition:border-color .2s,box-shadow .2s;
+  }
+  .field input:focus,.field select:focus{outline:none;border-color:var(--emerald);box-shadow:0 0 0 3px rgba(18,63,53,.12)}
+  .field select{appearance:none;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%23241F1A' stroke-width='1.5' fill='none' stroke-linecap='round'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 15px center}
+  .form-card .btn{width:100%;margin-top:8px}
+  .form-card .privacy{font-size:11.5px;color:var(--muted);text-align:center;margin-top:14px;line-height:1.5}
+
+  /* ---------- footer ---------- */
+  footer{background:var(--emerald-deep);color:var(--on-dark);padding:64px 0 30px}
+  .foot-grid{display:grid;grid-template-columns:1.4fr 1fr 1fr;gap:40px;padding-bottom:40px;border-bottom:1px solid rgba(241,236,224,.12)}
+  .foot-brand .monogram{background:var(--brass);color:#23180a}
+  .foot-brand b{color:var(--on-dark)}
+  .foot-brand small{color:var(--on-dark-soft)}
+  .foot-brand p{color:var(--on-dark-soft);font-size:14.5px;margin-top:18px;max-width:34ch}
+  .foot-sig{font-family:"Fraunces",serif;font-style:italic;color:var(--brass-l);margin-top:18px;font-size:17px}
+  .foot-col h4{font-size:12px;letter-spacing:.18em;text-transform:uppercase;color:var(--brass-l);margin-bottom:16px;font-weight:600}
+  .foot-col a,.foot-col p{display:block;color:var(--on-dark-soft);font-size:14.5px;margin-bottom:11px;transition:color .2s}
+  .foot-col a:hover{color:var(--on-dark)}
+  .foot-bottom{display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px;padding-top:24px;font-size:12.5px;color:var(--on-dark-soft)}
+
+  /* reveal */
+  .reveal{opacity:0;transform:translateY(26px);transition:opacity .7s ease,transform .7s ease}
+  .reveal.in{opacity:1;transform:none}
+
+  /* mobile */
+  @media(max-width:900px){
+    .hero-grid{grid-template-columns:1fr;gap:48px}
+    .portrait-stack{max-width:380px;margin:0 auto}
+    .pillars{grid-template-columns:1fr 1fr}
+    .about-grid{grid-template-columns:1fr;gap:36px}
+    .about-photo{max-width:360px}
+    .testi-grid{grid-template-columns:1fr}
+    .lead-grid{grid-template-columns:1fr;gap:40px}
+    .foot-grid{grid-template-columns:1fr;gap:30px}
+    .nav-links,.nav-cta .btn{display:none}
+    .menu-btn{display:block}
+    .nav-links.open{
+      display:flex;flex-direction:column;position:absolute;top:100%;left:0;right:0;
+      background:var(--paper);padding:22px 24px;gap:20px;box-shadow:0 20px 40px -20px rgba(0,0,0,.25);
+      border-top:1px solid var(--line);
+    }
+  }
+  @media(max-width:560px){
+    .pillars{grid-template-columns:1fr}
+    section.band{padding:72px 0}
+    .hero{padding:128px 0 70px}
+  }
+  @media(prefers-reduced-motion:reduce){
+    *{animation:none!important;transition:none!important}
+    html{scroll-behavior:auto}
+    .reveal{opacity:1;transform:none}
+  }
+</style>
+</head>
+<body>
+
+<!-- ===================== NAV ===================== -->
+<header class="nav" id="nav">
+  <div class="wrap nav-inner">
+    <a href="#top" class="brand">
+      <div class="monogram">RA</div>
+      <div><b>Rachel Almeida</b><small>English · ENG ⇄ PT</small></div>
+    </a>
+    <nav class="nav-links" id="navLinks">
+      <a href="#metodo">Método</a>
+      <a href="#teste">Teste de nível</a>
+      <a href="#sobre">Sobre</a>
+      <a href="#contato">Contato</a>
+    </nav>
+    <div class="nav-cta">
+      <a href="#teste" class="btn btn-primary">Fazer o teste grátis</a>
+      <button class="menu-btn" id="menuBtn" aria-label="Abrir menu"><span></span><span></span><span></span></button>
+    </div>
+  </div>
+</header>
+
+<!-- ===================== HERO ===================== -->
+<a id="top"></a>
+<section class="hero">
+  <div class="wrap hero-grid">
+    <div class="hero-copy reveal">
+      <span class="eyebrow">Professora · Tradutora · Intérprete</span>
+      <h1>Fale inglês como quem <span class="it">pensa</span> em inglês.</h1>
+      <span class="echo">Think in English. Speak with confidence.</span>
+      <p class="lead">Há mais de 10 anos levando alunos à fluência de verdade — sem decoreba, com método e conversa real desde a primeira aula.</p>
+      <div class="hero-actions">
+        <a href="#teste" class="btn btn-primary">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 01-2 2H5a2 2 0 01-2-2V5a2 2 0 012-2h11"/></svg>
+          Descobrir meu nível de inglês
+        </a>
+        <a href="#contato" class="btn btn-ghost">Falar com a Rachel</a>
+      </div>
+      <div class="hero-sig"><span class="it">I am because He is.</span></div>
+    </div>
+
+    <div class="portrait-stack reveal">
+      <div class="portrait">
+        <!-- Para usar a foto da Rachel, descomente e troque o src:
+             <img src="URL_OU_BASE64_DA_FOTO" alt="Rachel Almeida"> -->
+        <div class="ph">
+          <div class="mono">RA</div>
+          <small>Foto da Rachel aqui</small>
+        </div>
+      </div>
+      <div class="chip a"><b>+10</b><span>anos de experiência</span></div>
+      <div class="chip b"><b>ENG⇄PT</b><span>tradução &amp; interpretação</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== TRUST ===================== -->
+<div class="trust">
+  <div class="wrap">
+    <div class="item"><b>10+</b><span>anos ensinando</span></div>
+    <div class="item"><b>500+</b><span>alunos à fluência</span></div>
+    <div class="item"><b>1:1</b><span>aulas personalizadas</span></div>
+    <div class="item"><span class="flags">🇧🇷 🇺🇸</span><span>bilíngue nativa</span></div>
+  </div>
+</div>
+
+<!-- ===================== MÉTODO ===================== -->
+<section class="band" id="metodo">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="eyebrow">Como funciona</span>
+      <h2>Um método feito pra você <span class="it">destravar</span> de vez.</h2>
+      <p>Nada de planilha infinita e regra solta. Aqui o inglês entra no seu dia a dia até virar natural.</p>
+    </div>
+    <div class="pillars">
+      <div class="pillar reveal">
+        <div class="num">i.</div>
+        <h3>Diagnóstico real</h3>
+        <p>Começamos identificando exatamente onde você está e o que está travando a sua fluência.</p>
+      </div>
+      <div class="pillar reveal">
+        <div class="num">ii.</div>
+        <h3>Conversação desde já</h3>
+        <p>Você fala inglês desde a primeira aula. Aprender a língua é usar a língua.</p>
+      </div>
+      <div class="pillar reveal">
+        <div class="num">iii.</div>
+        <h3>Inglês com propósito</h3>
+        <p>Carreira, viagem, prova ou conversa: o conteúdo é desenhado pro seu objetivo.</p>
+      </div>
+      <div class="pillar reveal">
+        <div class="num">iv.</div>
+        <h3>Acompanhamento de perto</h3>
+        <p>Correções, feedback e ajuste de rota constantes pra você evoluir sem se perder.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== TESTE DE NÍVEL ===================== -->
+<section class="band test-band" id="teste">
+  <div class="wrap">
+    <div class="test-head reveal">
+      <span class="eyebrow center">Teste gratuito · 2 minutos</span>
+      <h2>Qual é o seu nível <span class="it">de verdade</span>?</h2>
+      <p>10 questões rápidas para descobrir seu nível no padrão internacional (A1–C1) e receber uma recomendação personalizada da Rachel.</p>
+    </div>
+
+    <div class="quiz reveal" id="quiz">
+      <!-- INTRO -->
+      <div class="q-screen active" id="screenIntro">
+        <div class="quiz-intro">
+          <div class="big">Pronto pra <span class="it">se surpreender</span>?</div>
+          <p>Responda do seu jeito, sem consultar nada. No fim você descobre seu nível e o próximo passo certo pra evoluir.</p>
+          <div class="quiz-meta">
+            <div><span class="dot"></span> <b>10</b> questões</div>
+            <div><span class="dot"></span> <b>~2</b> min</div>
+            <div><span class="dot"></span> nível <b>A1 → C1</b></div>
+          </div>
+          <button class="btn btn-gold" id="startBtn">Começar o teste</button>
+        </div>
+      </div>
+
+      <!-- QUESTIONS (gerado via JS) -->
+      <div class="q-screen" id="screenQuiz">
+        <div class="q-top">
+          <span class="q-counter" id="qCounter">Questão 01 / 10</span>
+          <span class="q-level" id="qLevel">level A1</span>
+        </div>
+        <div class="progress"><div class="bar" id="qBar"></div></div>
+        <h3 class="q-text" id="qText"></h3>
+        <div class="options" id="qOptions"></div>
+        <div class="q-nav">
+          <button class="q-back" id="qBack" disabled>← Voltar</button>
+          <button class="btn btn-gold" id="qNext" disabled>Próxima →</button>
+        </div>
+      </div>
+
+      <!-- GATE (form to reveal) -->
+      <div class="q-screen" id="screenGate">
+        <div class="gate">
+          <div class="lock">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0110 0v4"/></svg>
+          </div>
+          <h3>Seu resultado está <span class="it">pronto</span>.</h3>
+          <p>Deixe seu nome e WhatsApp para ver seu nível e receber um plano de estudos personalizado da Rachel.</p>
+          <div class="gate-form">
+            <input type="text" id="gateName" placeholder="Seu nome" autocomplete="name" />
+            <input type="tel" id="gatePhone" placeholder="Seu WhatsApp (com DDD)" autocomplete="tel" />
+            <button class="btn btn-gold" id="gateBtn">Ver meu resultado</button>
+          </div>
+          <p class="gate-note">Seus dados ficam só com a Rachel. Sem spam.</p>
+        </div>
+      </div>
+
+      <!-- RESULT -->
+      <div class="q-screen" id="screenResult">
+        <div class="result">
+          <div class="level-badge"><b id="rLevel">B1</b><span id="rCefr">CEFR</span></div>
+          <div class="level-name" id="rName">Intermediário</div>
+          <div class="score" id="rScore">7 de 10 acertos</div>
+          <p class="desc" id="rDesc"></p>
+          <div class="r-actions">
+            <a href="#" class="btn btn-gold" id="rWhats">
+              <svg viewBox="0 0 24 24" fill="currentColor" width="18" height="18"><path d="M12 2a10 10 0 00-8.6 15l-1.3 4.7 4.8-1.3A10 10 0 1012 2zm0 18a8 8 0 01-4.1-1.1l-.3-.2-2.9.8.8-2.8-.2-.3A8 8 0 1112 20zm4.4-6c-.2-.1-1.4-.7-1.6-.8s-.4-.1-.5.1-.6.8-.8 1-.3.2-.5.1a6.5 6.5 0 01-1.9-1.2 7.3 7.3 0 01-1.4-1.7c-.1-.3 0-.4.1-.5l.4-.5.2-.4v-.4l-.8-1.8c-.2-.5-.4-.4-.5-.4h-.5a1 1 0 00-.7.3 3 3 0 00-.9 2.2 5.2 5.2 0 001.1 2.7 11.8 11.8 0 004.5 4 5 5 0 002.2.5 2.7 2.7 0 001.8-1.3 2.2 2.2 0 00.2-1.3c-.1-.1-.3-.2-.5-.3z"/></svg>
+              Falar com a Rachel agora
+            </a>
+            <a href="#contato" class="btn btn-light" id="rPlan">Receber plano de estudos</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== SOBRE ===================== -->
+<section class="band" id="sobre">
+  <div class="wrap about-grid">
+    <div class="about-photo reveal">
+      <!-- Foto da Rachel: <img src="..." alt="Rachel Almeida"> -->
+      <div class="ph"><div class="mono">RA</div><small>Foto da Rachel</small></div>
+    </div>
+    <div class="about-body reveal">
+      <span class="eyebrow">Quem ensina</span>
+      <h2>Rachel Almeida — inglês que <span class="it">conecta</span>.</h2>
+      <p>Professora de inglês, tradutora e intérprete ENG/PT com mais de 10 anos de estrada. Já ajudei centenas de alunos a saírem do "entendo um pouco" para conversas reais, entrevistas, viagens e provas — com leveza e propósito.</p>
+      <p>Como intérprete, vivo o inglês na prática todos os dias. É essa vivência que levo pra dentro das aulas: você não aprende sobre a língua, você aprende a viver nela.</p>
+      <div class="about-tags">
+        <span class="tag">Conversação</span>
+        <span class="tag">Inglês para carreira</span>
+        <span class="tag">Preparação para provas</span>
+        <span class="tag">Tradução &amp; interpretação</span>
+        <span class="tag">Aulas 1:1 e em grupo</span>
+      </div>
+      <blockquote class="about-quote">"I am because He is."</blockquote>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== DEPOIMENTOS ===================== -->
+<section class="band testi-band">
+  <div class="wrap">
+    <div class="sec-head center reveal">
+      <span class="eyebrow center">Quem aprende com a Rachel</span>
+      <h2>Histórias de quem <span class="it">destravou</span>.</h2>
+    </div>
+    <div class="testi-grid">
+      <div class="testi reveal">
+        <div class="stars">★★★★★</div>
+        <p>"Eu travava na hora de falar. Em poucos meses consegui conduzir reuniões em inglês no trabalho com confiança."</p>
+        <div class="who"><div class="av">M</div><div><b>[Nome do aluno]</b><span>Inglês para carreira</span></div></div>
+      </div>
+      <div class="testi reveal">
+        <div class="stars">★★★★★</div>
+        <p>"A Rachel tem uma didática que faz o inglês fazer sentido. Viajei pros EUA e me virei super bem."</p>
+        <div class="who"><div class="av">J</div><div><b>[Nome do aluno]</b><span>Conversação</span></div></div>
+      </div>
+      <div class="testi reveal">
+        <div class="stars">★★★★★</div>
+        <p>"Aula leve, humana e com método. Saí do básico e hoje assisto séries sem legenda. Recomendo demais!"</p>
+        <div class="who"><div class="av">A</div><div><b>[Nome do aluno]</b><span>Fluência</span></div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== LEAD FORM ===================== -->
+<section class="band" id="contato">
+  <div class="wrap lead-grid">
+    <div class="lead-copy reveal">
+      <span class="eyebrow">Vamos começar</span>
+      <h2>Dê o primeiro passo rumo à sua <span class="it">fluência</span>.</h2>
+      <p>Preencha seus dados e a Rachel entra em contato para entender seu objetivo e montar o melhor caminho pra você.</p>
+      <ul class="lead-bullets">
+        <li><span class="ck">✓</span> Conversa inicial sem compromisso</li>
+        <li><span class="ck">✓</span> Plano de estudos pensado no seu objetivo</li>
+        <li><span class="ck">✓</span> Aulas 100% personalizadas, online ou presencial</li>
+      </ul>
+    </div>
+
+    <div class="form-card reveal">
+      <div class="field">
+        <label for="fName">Nome completo</label>
+        <input type="text" id="fName" placeholder="Como podemos te chamar?" autocomplete="name" />
+      </div>
+      <div class="field">
+        <label for="fPhone">WhatsApp</label>
+        <input type="tel" id="fPhone" placeholder="(98) 9 0000-0000" autocomplete="tel" />
+      </div>
+      <div class="field">
+        <label for="fEmail">E-mail <span style="color:var(--muted);font-weight:400">(opcional)</span></label>
+        <input type="email" id="fEmail" placeholder="voce@email.com" autocomplete="email" />
+      </div>
+      <div class="field">
+        <label for="fGoal">Qual seu objetivo com o inglês?</label>
+        <select id="fGoal">
+          <option value="">Selecione...</option>
+          <option>Fluência para conversação</option>
+          <option>Inglês para trabalho / carreira</option>
+          <option>Viagens</option>
+          <option>Provas e certificações</option>
+          <option>Tradução / interpretação</option>
+          <option>Ainda não sei, quero orientação</option>
+        </select>
+      </div>
+      <div class="field">
+        <label for="fLevel">Seu nível atual</label>
+        <select id="fLevel">
+          <option value="">Selecione...</option>
+          <option>Iniciante (A1)</option>
+          <option>Básico (A2)</option>
+          <option>Intermediário (B1)</option>
+          <option>Avançado (B2)</option>
+          <option>Fluente (C1+)</option>
+          <option>Não sei (fiz/quero fazer o teste)</option>
+        </select>
+      </div>
+      <button class="btn btn-primary" id="leadBtn">Quero começar a aprender</button>
+      <p class="privacy">Ao enviar, você concorda em ser contatado(a) pela Rachel pelos dados informados.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== FOOTER ===================== -->
+<footer>
+  <div class="wrap">
+    <div class="foot-grid">
+      <div class="foot-brand">
+        <a href="#top" class="brand"><div class="monogram">RA</div><div><b>Rachel Almeida</b><small style="color:var(--on-dark-soft)">English · ENG ⇄ PT</small></div></a>
+        <p>Professora de inglês, tradutora e intérprete. +10 anos levando alunos à fluência de verdade.</p>
+        <div class="foot-sig">Think in English. Speak with confidence.</div>
+      </div>
+      <div class="foot-col">
+        <h4>Navegação</h4>
+        <a href="#metodo">Método</a>
+        <a href="#teste">Teste de nível</a>
+        <a href="#sobre">Sobre a Rachel</a>
+        <a href="#contato">Começar agora</a>
+      </div>
+      <div class="foot-col">
+        <h4>Contato</h4>
+        <a href="#" id="footWhats">WhatsApp</a>
+        <a href="#" id="footInsta">Instagram</a>
+        <a href="#" id="footThreads">Threads</a>
+      </div>
+    </div>
+    <div class="foot-bottom">
+      <span>© <span id="year"></span> Rachel Almeida — Todos os direitos reservados.</span>
+      <span>Feito com método. <span class="it" style="color:var(--brass-l)">I am because He is.</span></span>
+    </div>
+  </div>
+</footer>
+
+<script>
+/* =========================================================
+   NAV
+   ========================================================= */
+const nav = document.getElementById('nav');
+const navLinks = document.getElementById('navLinks');
+const menuBtn = document.getElementById('menuBtn');
+addEventListener('scroll',()=>nav.classList.toggle('solid',scrollY>30));
+menuBtn.addEventListener('click',()=>navLinks.classList.toggle('open'));
+navLinks.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>navLinks.classList.remove('open')));
+
+/* =========================================================
+   REVEAL ON SCROLL
+   ========================================================= */
+const io = new IntersectionObserver((entries)=>{
+  entries.forEach(e=>{ if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target);} });
+},{threshold:.14});
+document.querySelectorAll('.reveal').forEach((el,i)=>{el.style.transitionDelay=(i%4*60)+'ms';io.observe(el);});
+
+/* =========================================================
+   LINKS (WhatsApp / social)
+   ========================================================= */
+const waBase = `https://wa.me/${CONFIG.whatsapp}`;
+document.getElementById('footInsta').href = CONFIG.instagram;
+document.getElementById('footThreads').href = CONFIG.threads;
+document.getElementById('footWhats').href = waBase;
+document.getElementById('year').textContent = new Date().getFullYear();
+
+/* =========================================================
+   ENGLISH LEVEL TEST
+   ========================================================= */
+const QUESTIONS = [
+  {lvl:"A1", q:["She ","drinks"," coffee every morning."], opts:["drink","drinks","drinking","drank"], a:1},
+  {lvl:"A2", q:["There ","were"," many people at the party last night."], opts:["was","were","is","are"], a:1},
+  {lvl:"A2", q:["I have lived in this city ","for"," five years."], opts:["since","for","ago","during"], a:1},
+  {lvl:"B1", q:["If it ","rains"," tomorrow, we'll stay home."], opts:["rains","rained","will rain","raining"], a:0},
+  {lvl:"B1", q:["I'm really interested ","in"," learning new languages."], opts:["on","at","in","for"], a:2},
+  {lvl:"B2", q:["By the time she arrived, the meeting ","had"," already started."], opts:["has","had","was","have"], a:1},
+  {lvl:"B2", q:["The documents ","were signed"," by the lawyer yesterday."], opts:["signed","were signed","have signed","signing"], a:1},
+  {lvl:"B2", q:["I'd rather you ","didn't"," tell anyone about this."], opts:["don't","didn't","won't","not"], a:1},
+  {lvl:"C1", q:["","Had"," I known earlier, I would have helped you."], opts:["If","Had","Have","Would"], a:1},
+  {lvl:"C1", q:["The negotiations fell ","through"," at the last minute."], opts:["through","out","off","over"], a:0},
+];
+
+const LEVELS = {
+  A1:{cefr:"A1",name:"Iniciante",desc:"Você está começando a jornada! Já reconhece palavras e frases básicas. Com um método de conversação desde o início, sua evolução pode ser muito mais rápida do que imagina."},
+  A2:{cefr:"A2",name:"Básico",desc:"Você já se vira no básico e entende ideias simples. O próximo salto é ganhar confiança pra falar sem medo — e é exatamente aí que a Rachel pode te acelerar."},
+  B1:{cefr:"B1",name:"Intermediário",desc:"Boa base! Você se comunica em situações do dia a dia. Agora o foco é destravar a fluência e a naturalidade pra conversas mais longas e profissionais."},
+  B2:{cefr:"B2",name:"Avançado-intermediário",desc:"Mandou muito bem! Você já lida com inglês em contextos variados. O refinamento de fluência, vocabulário e precisão vai te levar ao nível de quem pensa em inglês."},
+  C1:{cefr:"C1",name:"Avançado",desc:"Excelente! Você tem um inglês sólido e sofisticado. O próximo passo é polir nuances, naturalidade e expressões — ou explorar tradução e interpretação com a Rachel."},
+};
+
+let current = 0;
+const answers = new Array(QUESTIONS.length).fill(null);
+let lead = {name:"", phone:""};
+
+const screens = {
+  intro: document.getElementById('screenIntro'),
+  quiz: document.getElementById('screenQuiz'),
+  gate: document.getElementById('screenGate'),
+  result: document.getElementById('screenResult'),
+};
+function show(name){
+  Object.values(screens).forEach(s=>s.classList.remove('active'));
+  screens[name].classList.add('active');
+  document.getElementById('teste').scrollIntoView({behavior:'smooth',block:'start'});
+}
+
+const qCounter = document.getElementById('qCounter');
+const qLevel = document.getElementById('qLevel');
+const qBar = document.getElementById('qBar');
+const qText = document.getElementById('qText');
+const qOptions = document.getElementById('qOptions');
+const qNext = document.getElementById('qNext');
+const qBack = document.getElementById('qBack');
+
+function renderQuestion(){
+  const item = QUESTIONS[current];
+  qCounter.textContent = `Questão ${String(current+1).padStart(2,'0')} / ${QUESTIONS.length}`;
+  qLevel.textContent = `level ${item.lvl}`;
+  qBar.style.width = `${(current)/QUESTIONS.length*100}%`;
+  // build sentence with blank
+  qText.innerHTML = `${item.q[0]}<span class="blank">______</span>${item.q[2]}`;
+  qOptions.innerHTML = "";
+  const letters = ["A","B","C","D"];
+  item.opts.forEach((opt,i)=>{
+    const b = document.createElement('button');
+    b.className = 'opt' + (answers[current]===i ? ' selected':'');
+    b.innerHTML = `<span class="key">${letters[i]}</span><span>${opt}</span>`;
+    b.addEventListener('click',()=>{
+      answers[current]=i;
+      [...qOptions.children].forEach(c=>c.classList.remove('selected'));
+      b.classList.add('selected');
+      qNext.disabled = false;
+    });
+    qOptions.appendChild(b);
+  });
+  qNext.disabled = answers[current]===null;
+  qNext.textContent = current===QUESTIONS.length-1 ? 'Ver meu resultado →' : 'Próxima →';
+  qBack.disabled = current===0;
+}
+
+document.getElementById('startBtn').addEventListener('click',()=>{ current=0; show('quiz'); renderQuestion(); });
+qNext.addEventListener('click',()=>{
+  if(answers[current]===null) return;
+  if(current<QUESTIONS.length-1){ current++; renderQuestion(); }
+  else { qBar.style.width='100%'; show('gate'); }
+});
+qBack.addEventListener('click',()=>{ if(current>0){ current--; renderQuestion(); } });
+
+/* compute + reveal result */
+function computeLevel(){
+  const score = answers.reduce((s,a,i)=> s + (a===QUESTIONS[i].a?1:0), 0);
+  let key='A1';
+  if(score>=9) key='C1';
+  else if(score>=7) key='B2';
+  else if(score>=5) key='B1';
+  else if(score>=3) key='A2';
+  return {score, key, ...LEVELS[key]};
+}
+
+document.getElementById('gateBtn').addEventListener('click',()=>{
+  const name = document.getElementById('gateName').value.trim();
+  const phone = document.getElementById('gatePhone').value.trim();
+  if(name.length<2){ document.getElementById('gateName').focus(); return; }
+  if(phone.replace(/\D/g,'').length<8){ document.getElementById('gatePhone').focus(); return; }
+  lead = {name, phone};
+
+  const res = computeLevel();
+  document.getElementById('rLevel').textContent = res.cefr;
+  document.getElementById('rCefr').textContent = 'CEFR';
+  document.getElementById('rName').textContent = res.name;
+  document.getElementById('rScore').textContent = `${res.score} de ${QUESTIONS.length} acertos`;
+  document.getElementById('rDesc').textContent = res.desc;
+
+  const msg = `Olá, Rachel! Fiz o teste de nível no site.%0A%0A`+
+    `Nome: ${encodeURIComponent(name)}%0A`+
+    `Nível: ${res.cefr} - ${encodeURIComponent(res.name)}%0A`+
+    `Acertos: ${res.score}/${QUESTIONS.length}%0A%0A`+
+    `Quero receber meu plano de estudos personalizado.`;
+  document.getElementById('rWhats').href = `${waBase}?text=${msg}`;
+
+  // envia lead pro endpoint, se houver
+  sendLead({source:'teste-de-nivel', name, phone, level:`${res.cefr} - ${res.name}`, score:`${res.score}/${QUESTIONS.length}`});
+
+  // preenche o formulário principal
+  document.getElementById('fName').value = name;
+  document.getElementById('fPhone').value = phone;
+  document.getElementById('fLevel').value = {A1:'Iniciante (A1)',A2:'Básico (A2)',B1:'Intermediário (B1)',B2:'Avançado (B2)',C1:'Fluente (C1+)'}[res.key] || '';
+
+  show('result');
+});
+
+/* =========================================================
+   LEAD FORM
+   ========================================================= */
+async function sendLead(data){
+  if(!CONFIG.formEndpoint) return; // sem endpoint, segue só pelo WhatsApp
+  try{
+    await fetch(CONFIG.formEndpoint,{
+      method:'POST',
+      headers:{'Content-Type':'application/json'},
+      body:JSON.stringify(data)
+    });
+  }catch(e){ /* silencioso */ }
+}
+
+document.getElementById('leadBtn').addEventListener('click',()=>{
+  const name = document.getElementById('fName').value.trim();
+  const phone = document.getElementById('fPhone').value.trim();
+  const email = document.getElementById('fEmail').value.trim();
+  const goal = document.getElementById('fGoal').value;
+  const level = document.getElementById('fLevel').value;
+  if(name.length<2){ document.getElementById('fName').focus(); return; }
+  if(phone.replace(/\D/g,'').length<8){ document.getElementById('fPhone').focus(); return; }
+
+  sendLead({source:'formulario', name, phone, email, goal, level});
+
+  const msg = `Olá, Rachel! Quero começar a aprender inglês.%0A%0A`+
+    `Nome: ${encodeURIComponent(name)}%0A`+
+    (email?`E-mail: ${encodeURIComponent(email)}%0A`:``)+
+    (goal?`Objetivo: ${encodeURIComponent(goal)}%0A`:``)+
+    (level?`Nível atual: ${encodeURIComponent(level)}%0A`:``);
+  window.open(`${waBase}?text=${msg}`,'_blank');
+});
+</script>
+</body>
+</html>
